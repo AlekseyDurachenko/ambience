@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>927</width>
+    <height>429</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QseWidget" name="soundWidget" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>927</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_Open"/>
+    <addaction name="action_Save"/>
+    <addaction name="action_SaveAs"/>
+    <addaction name="action_Close"/>
+    <addaction name="separator"/>
+    <addaction name="action_SaveSelectionAs"/>
+    <addaction name="separator"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Play">
+    <property name="title">
+     <string>&amp;Play</string>
+    </property>
+    <addaction name="action_Loop"/>
+    <addaction name="separator"/>
+    <addaction name="action_Play"/>
+    <addaction name="action_PlayAll"/>
+    <addaction name="action_Pause"/>
+    <addaction name="action_Stop"/>
+    <addaction name="action_GoToStart"/>
+    <addaction name="action_GoToEnd"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_About"/>
+    <addaction name="action_AboutQt"/>
+   </widget>
+   <widget class="QMenu" name="menu_View">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="action_ZoomIn"/>
+    <addaction name="action_ZoomOut"/>
+    <addaction name="action_FitInWindow"/>
+    <addaction name="action_ZoomToSelection"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="action_Normalize"/>
+    <addaction name="action_Delete"/>
+    <addaction name="action_Trim"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_Play"/>
+   <addaction name="menu_View"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Open"/>
+   <addaction name="action_Save"/>
+   <addaction name="action_SaveAs"/>
+   <addaction name="action_Close"/>
+   <addaction name="action_Quit"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Loop"/>
+   <addaction name="separator"/>
+   <addaction name="action_PlayAll"/>
+   <addaction name="action_Play"/>
+   <addaction name="action_Pause"/>
+   <addaction name="action_Stop"/>
+   <addaction name="action_GoToStart"/>
+   <addaction name="action_GoToEnd"/>
+  </widget>
+  <action name="action_Open">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/file-open.png</normaloff>:/icons/file-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+  </action>
+  <action name="action_Quit">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/quit.png</normaloff>:/icons/quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit...</string>
+   </property>
+  </action>
+  <action name="action_Play">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/playback-start.png</normaloff>:/icons/playback-start.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Play</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/appicon.png</normaloff>:/icons/appicon.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About...</string>
+   </property>
+  </action>
+  <action name="action_AboutQt">
+   <property name="text">
+    <string>About &amp;Qt...</string>
+   </property>
+  </action>
+  <action name="action_Stop">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/playback-stop.png</normaloff>:/icons/playback-stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Stop</string>
+   </property>
+  </action>
+  <action name="action_Pause">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/playback-pause.png</normaloff>:/icons/playback-pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>P&amp;ause</string>
+   </property>
+  </action>
+  <action name="action_Loop">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/playback-loop.png</normaloff>:/icons/playback-loop.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Loop</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/file-save.png</normaloff>:/icons/file-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save...</string>
+   </property>
+  </action>
+  <action name="action_SaveAs">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/file-save-as.png</normaloff>:/icons/file-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save &amp;As...</string>
+   </property>
+  </action>
+  <action name="action_SaveSelectionAs">
+   <property name="text">
+    <string>&amp;Export Selection As...</string>
+   </property>
+  </action>
+  <action name="action_Close">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/file-close.png</normaloff>:/icons/file-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="action_GoToStart">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/skip-backward.png</normaloff>:/icons/skip-backward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go to S&amp;tart</string>
+   </property>
+  </action>
+  <action name="action_GoToEnd">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/skip-forward.png</normaloff>:/icons/skip-forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go to &amp;End</string>
+   </property>
+  </action>
+  <action name="action_ZoomIn">
+   <property name="text">
+    <string>Zoom &amp;In</string>
+   </property>
+  </action>
+  <action name="action_ZoomOut">
+   <property name="text">
+    <string>Zoom &amp;Out</string>
+   </property>
+  </action>
+  <action name="action_FitInWindow">
+   <property name="text">
+    <string>&amp;Fit in Window</string>
+   </property>
+  </action>
+  <action name="action_ZoomToSelection">
+   <property name="text">
+    <string>Zoom to &amp;Selection</string>
+   </property>
+  </action>
+  <action name="action_Trim">
+   <property name="text">
+    <string>&amp;Trim</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="action_Delete">
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+  </action>
+  <action name="action_Preferences">
+   <property name="text">
+    <string>&amp;Preferences</string>
+   </property>
+  </action>
+  <action name="action_PlayAll">
+   <property name="icon">
+    <iconset resource="../rc/rc.qrc">
+     <normaloff>:/icons/playback-playall.png</normaloff>:/icons/playback-playall.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play &amp;All</string>
+   </property>
+  </action>
+  <action name="action_Normalize">
+   <property name="text">
+    <string>&amp;Normalize</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QseWidget</class>
+   <extends>QWidget</extends>
+   <header>qsewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../rc/rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

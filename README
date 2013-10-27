@@ -1,0 +1,28 @@
+WARNING!!!!!!!
+This project is for test only!
+Do not use this audio editor for production! Be carefull, this software
+may destroy your sound data!
+
+compile:
+1. download the library
+mkdir libs
+cd libs
+svn checkout https://qtsampleengine.googlecode.com/svn/trunk/ qse
+
+2. compile
+cd ..
+qmake
+make -j13
+
+3. start
+cd bin
+./ambience
+
+
+using icons from "Open Icon Library"
+
+package:
+* libqt4-dev
+* portaudio19-dev
+* libsndfile1-dev
+
